@@ -4,17 +4,17 @@
 // File name: projects/01/And.hdl
 
 /**
- * And gate: 
- * out = 1 if (a == 1 and b == 1)
+ * Nand gate: 
+ * out = 1 if (a == 0 or b == 0)
  *       0 otherwise
  */
 
-CHIP And {
+CHIP myNand {
     IN a, b;
     OUT out;
 
     PARTS:
     // Put your code here:
-	Nand(a=a, b=b, out=anandb);  //Nand is inbuilt
-	Nand(a=anandb, b=anandb, out=out);
+	And(a=a, b=b, out=aAndb);
+	Not(in=aAndb, out=out);
 }
